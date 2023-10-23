@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+
+	<style type="text/css">
+		label{
+			display: inline-block;
+			width: 20%;
+		}
+
+		input{
+			margin: .5%;
+		}
+	</style>
+</head>
+
+<body>
+	<div style="background-color: greenyellow;margin: 0 auto; width: fit-content;padding: 1%;">
+	<form name="average" action="07_03.html" method="get">
+		<p style="text-align: center;">Calculate Your Average Score</p>
+		<label >Math</label>
+		<input type="text" name="score" ><br>
+		<label>English</label>
+		<input type="text" name="score" ><br>
+		<label>History</label>
+		<input type="text" name="score">
+
+		<br/><br/>
+
+		<input type="button" value="submit" onclick="averageScore()" name="">
+		<input type="reset" value="reset">
+	</form>
+	</div>
+
+	<script>
+		function averageScore(average){
+			var totalScore=0
+			for (var i=0;i<document.average.score.length;i++){
+				totalScore+= parseInt(document.average.score[i].value)
+			}
+
+			var avg = totalScore/document.average.score.length
+			alert("Your Average Score is "+ avg.toFixed(2))
+			
+		}
+	</script>
+	
+</body>
+
+</html>
